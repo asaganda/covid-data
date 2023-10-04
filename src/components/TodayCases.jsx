@@ -1,12 +1,10 @@
 /* eslint-disable react/prop-types */
-const TotalCases = (props) => {
-
+const TodayCases = (props) => {
     return (
         <div style={{ backgroundColor: 'pink', border: '5px solid red', borderRadius: '10px'}}>
-            <p>Total Cases</p>
-            <h2>{props.data.cases.toLocaleString()}</h2>
+            <p>Today Cases</p>
+            <h2>{props.data.todayCases}</h2>
         </div>
     )
 }
-
-export default TotalCases
+export default TodayCases
