@@ -24,8 +24,8 @@ const App = () => {
       <p className="read-the-docs">
         covid data
       </p>
-      <TotalCases data={data}/>
-      <TodayCases data={data}/>
+      <TotalCases covidData={data}/>
+      <TodayCases covidData={data}/>
     </>
   )
 }
