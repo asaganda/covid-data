@@ -5,12 +5,12 @@ import TotalCases from './components/totalCases'
 import TodayCases from './components/TodayCases'
 
 const App = () => {
-  const [data, setData] = useState({})
+  const [covidData, setCovidData] = useState({})
 
   const getCovidData = () => {
     return axios.get('https://disease.sh/v3/covid-19/all')
       .then(response => {
-        setData(response.data)
+        setCovidData(response.data)
       })
       .catch(error => console.log(error))
   }
@@ -24,8 +24,8 @@ const App = () => {
       <p className="read-the-docs">
         covid data
       </p>
-      <TotalCases covidData={data}/>
-      <TodayCases covidData={data}/>
+      <TotalCases data={covidData}/>
+      <TodayCases data={covidData}/>
     </>
   )
 }

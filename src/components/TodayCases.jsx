@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
-const TodayCases = (props) => {
+const TodayCases = ({ data }) => {
     return (
         <div style={{ backgroundColor: 'pink', border: '5px solid red', borderRadius: '10px'}}>
             <p>Today Cases</p>
-            <h2>{props.data.todayCases}</h2>
+            <h2>{data.todayCases}</h2>
         </div>
     )
 }
