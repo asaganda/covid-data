@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import axios from 'axios'
-import TotalCases from './components/totalCases'
-import TodayCases from './components/TodayCases'
-import Deaths from './components/Deaths'
+import WorldwideData from './components/WorldwideData'
 
 const App = () => {
   const [covidData, setCovidData] = useState({})
@@ -25,9 +23,7 @@ const App = () => {
       <p className="read-the-docs">
         covid data
       </p>
-      <TotalCases data={covidData}/>
-      <TodayCases data={covidData}/>
-      <Deaths data={covidData}/>
+      <WorldwideData data={covidData}/>
     </>
   )
 }
