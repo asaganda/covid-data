@@ -20,7 +20,7 @@ const App = () => {
   
   return (
     <>
-      <p className="read-the-docs">
+      <p>
         covid data
       </p>
       <WorldwideData data={covidData}/>
