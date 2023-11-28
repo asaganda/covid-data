@@ -4,7 +4,7 @@ const WorldwideData = ({ data }) => {
         display: 'flex',
         flexWrap: 'wrap'
     }
-
+    
     return (
         <div style={ gridStyle }>
             {Object.entries(data).map(([key, value]) => {

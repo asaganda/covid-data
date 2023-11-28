@@ -9,6 +9,15 @@ const App = () => {
   const getCovidData = () => {
     return axios.get('https://disease.sh/v3/covid-19/all')
       .then(response => {
+        console.log(response.data)
+        const allowedKeys = ['cases', 'deaths', 'critical', 'recovered', 'population'];
+        const filteredData = Object.keys(response.data)
+          .filter(key => allowedKeys.includes(key))
+          .reduce((obj, key) => {
+            obj[key] = response.data[key];
+            return obj;
+          }, {})
+        console.log(filteredData)
         setCovidData(response.data)
       })
       .catch(error => console.log(error))
