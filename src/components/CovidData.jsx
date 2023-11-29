@@ -1,4 +1,4 @@
-const WorldwideData = ({ data }) => {
+const CovidData = ({ data }) => {
 
     const gridStyle = {
         display: 'flex',
@@ -19,4 +19,4 @@ const WorldwideData = ({ data }) => {
     )
 }
 
-export default WorldwideData
+export default CovidData

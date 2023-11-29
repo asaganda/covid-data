@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import axios from 'axios'
-import WorldwideData from './components/WorldwideData'
+import CovidData from './components/CovidData'
 
 const App = () => {
   const [covidData, setCovidData] = useState({})
@@ -32,7 +32,7 @@ const App = () => {
       <p>
         covid data
       </p>
-      <WorldwideData data={covidData}/>
+      <CovidData data={covidData}/>
     </>
   )
 }
