@@ -18,7 +18,7 @@ const App = () => {
             return obj;
           }, {})
         console.log(filteredData)
-        setCovidData(response.data)
+        setCovidData(filteredData)
       })
       .catch(error => console.log(error))
   }
