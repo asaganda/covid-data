@@ -1,30 +1,49 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import axios from 'axios'
-import CovidData from './components/CovidData'
+import WorldwideData from './components/CovidData'
+import UnitedStatesData from './components/CovidData'
 
 const App = () => {
-  const [covidData, setCovidData] = useState({})
+  const [worldCovidData, setWorldCovidData] = useState({})
+  const [unitedCovidData, setUnitedCovidData] = useState({})
 
-  const getCovidData = () => {
+  const getWorldCovidData = () => {
     return axios.get('https://disease.sh/v3/covid-19/all')
       .then(response => {
-        console.log(response.data)
+        // console.log(response.data)
         const allowedKeys = ['cases', 'deaths', 'critical', 'recovered', 'population'];
-        const filteredData = Object.keys(response.data)
+        const filteredWorldData = Object.keys(response.data)
           .filter(key => allowedKeys.includes(key))
           .reduce((obj, key) => {
             obj[key] = response.data[key];
             return obj;
           }, {})
-        console.log(filteredData)
-        setCovidData(filteredData)
+        // console.log(filteredData)
+        setWorldCovidData(filteredWorldData)
+      })
+      .catch(error => console.log(error))
+  }
+  
+  const getUSCovidData = () => {
+    return axios.get('https://disease.sh/v3/covid-19/countries/usa')
+      .then(response => {
+        console.log(response.data)
+        const allowedKeys = ['country','cases', 'deaths', 'critical', 'recovered', 'population'];
+        const filteredUnitedData = Object.keys(response.data)
+          .filter(key => allowedKeys.includes(key))
+          .reduce((obj, key) => {
+            obj[key] = response.data[key];
+            return obj;
+          }, {})
+        setUnitedCovidData(filteredUnitedData)
       })
       .catch(error => console.log(error))
   }
   
   useEffect(() => {
-    getCovidData()
+    getWorldCovidData()
+    getUSCovidData()
   }, [])
   
   return (
@@ -32,7 +51,9 @@ const App = () => {
       <p>
         covid data
       </p>
-      <CovidData data={covidData}/>
+      <WorldwideData data={worldCovidData}/>
+      <br />
+      <UnitedStatesData data={unitedCovidData}/>
     </>
   )
 }
