@@ -50,7 +50,7 @@ const App = () => {
   
   return (
     <>
-      <Navbar setPage={setPage} data={unitedCovidData}/>
+      <Navbar setPage={setPage} page={page} data={unitedCovidData}/>
       { page === 1 ? <WorldwideData data={worldCovidData}/> : <></> }
       { page === 2 ? <UnitedStatesData data={unitedCovidData}/> : <></> }
     </>

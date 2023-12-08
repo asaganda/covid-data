@@ -2,7 +2,8 @@ const CovidData = ({ data }) => {
 
     const gridStyle = {
         display: 'flex',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+        justifyContent: 'center'
     }
     
     return (
