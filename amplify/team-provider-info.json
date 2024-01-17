@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-coviddata-dev-214559-authRole",
+      "UnauthRoleArn": "arn:aws:iam::276640211714:role/amplify-coviddata-dev-214559-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::276640211714:role/amplify-coviddata-dev-214559-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-coviddata-dev-214559-deployment",
+      "UnauthRoleName": "amplify-coviddata-dev-214559-unauthRole",
+      "StackName": "amplify-coviddata-dev-214559",
+      "StackId": "arn:aws:cloudformation:us-east-1:276640211714:stack/amplify-coviddata-dev-214559/63a77a00-af62-11ee-be00-0a89c4e59fdb",
+      "AmplifyAppId": "d377bd6s2tpcev"
+    },
+    "categories": {
+      "auth": {
+        "coviddata": {}
+      },
+      "analytics": {
+        "coviddata": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}

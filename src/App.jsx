@@ -4,8 +4,15 @@ import axios from 'axios'
 import WorldwideData from './components/CovidData'
 import UnitedStatesData from './components/CovidData'
 import Navbar from './components/Navbar'
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+import amplifyconfig from './amplifyconfiguration.json';
+Amplify.configure(amplifyconfig);
 
-const App = () => {
+
+
+const App = ({ signOut, user }) => {
   const [worldCovidData, setWorldCovidData] = useState({})
   const [unitedCovidData, setUnitedCovidData] = useState({})
   const [page, setPage] = useState(1)
@@ -50,11 +57,15 @@ const App = () => {
   
   return (
     <>
-      <Navbar setPage={setPage} page={page} data={unitedCovidData}/>
+      <header className="bg-red">
+        <h1>Hello {user.username}</h1>
+        <button onClick={signOut}>Sign out</button>
+        <Navbar setPage={setPage} page={page} data={unitedCovidData}/>
+      </header>
       { page === 1 ? <WorldwideData data={worldCovidData}/> : <></> }
       { page === 2 ? <UnitedStatesData data={unitedCovidData}/> : <></> }
     </>
   )
 }
 
-export default App
+export default withAuthenticator(App);

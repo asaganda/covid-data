@@ -1,0 +1,21 @@
+{
+    "appName": "coviddata",
+    "roleName": "pinpointLambdaRole875ca0ae",
+    "cloudformationPolicyName": "cloudformationPolicy875ca0ae",
+    "cloudWatchPolicyName": "cloudWatchPolicy875ca0ae",
+    "pinpointPolicyName": "pinpointPolicy875ca0ae",
+    "authPolicyName": "pinpoint_amplify_875ca0ae",
+    "unauthPolicyName": "pinpoint_amplify_875ca0ae",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}
